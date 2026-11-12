@@ -628,8 +628,8 @@ var tf=document.getElementById('form5764367903');
 if(tf){ tf.style.display='none'; tf.parentNode.insertBefore(box, tf); }
 var rec=document.getElementById('rec5764367903');
 if(rec){ // убираем «Ссылку для оплаты пришлем после регистрации»
-rec.querySelectorAll('.t-section__descr *, .t-section__descr').forEach(function(el){
-if(el.children.length===0 && /Ссылку для оплаты/.test(el.textContent)) el.style.display='none';
+rec.querySelectorAll('*').forEach(function(el){
+if(el.children.length===0 && !el.closest('#smReg') && /Ссылку для оплаты/.test(el.textContent)) el.style.display='none';
 });
 }
 var method='', s1=document.getElementById('smS1'), s2=document.getElementById('smS2'), s3=document.getElementById('smS3');
