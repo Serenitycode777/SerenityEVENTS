@@ -1001,4 +1001,25 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 })();
 </script>
 <!-- /SM верхний экран -->
+<!-- SM: параллакс для верхнего экрана -->
+<style>
+.hr1{background:none!important;isolation:isolate}
+.hr-bg{position:absolute;left:0;right:0;top:-25%;height:150%;z-index:-2;background:url(https://static.tildacdn.net/tild6237-3235-4332-a139-376432303062/roses.jpg) center/cover;will-change:transform}
+.hr1::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(46,84,80,.55),rgba(60,46,86,.72))}
+</style>
+<script>
+(function(){
+function init(){
+var h=document.querySelector('#rec5764366703 .hr1'); if(!h || h.querySelector('.hr-bg')) return;
+var bg=document.createElement('div'); bg.className='hr-bg'; h.insertBefore(bg, h.firstChild);
+if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+var tick=false;
+function upd(){ tick=false; var r=h.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return; bg.style.transform='translate3d(0,'+(-r.top*0.4).toFixed(1)+'px,0)'; }
+addEventListener('scroll',function(){ if(!tick){ tick=true; requestAnimationFrame(upd); } },{passive:true});
+addEventListener('resize',upd); upd();
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+</script>
+<!-- /SM параллакс -->
 </body> </html>
