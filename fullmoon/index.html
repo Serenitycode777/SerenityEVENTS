@@ -1054,4 +1054,45 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 })();
 </script>
 <!-- /SM инфо-полоса -->
+<!-- SM: луна в программе – большая дышащая луна за заголовком «Программа круга» -->
+<style>
+.smph .smph-moon{display:none!important}
+.smph{position:relative;isolation:isolate}
+.smph>*:not(.smph-bgm){position:relative;z-index:1}
+.smph-bgm{position:absolute;z-index:0;pointer-events:none;background:url(https://marathon.serenitymoonevents.com/events-img/fullmoon-moon.png) center/contain no-repeat;border-radius:50%;
+  width:310px;height:310px;left:50%;top:38%;margin:-155px 0 0 -155px;opacity:.22;filter:blur(.5px);
+  -webkit-mask:radial-gradient(circle,#000 55%,transparent 72%);mask:radial-gradient(circle,#000 55%,transparent 72%);
+  animation:smbgm1 7s ease-in-out infinite}
+@keyframes smbgm1{0%,100%{opacity:.16;transform:scale(.96)}50%{opacity:.32;transform:scale(1.03)}}
+@media(max-width:600px){.smph-bgm{width:265px;height:265px;margin:-132px 0 0 -132px}}
+@media(prefers-reduced-motion:reduce){.smph-bgm{animation:none}}
+</style>
+<script>
+(function(){
+  var n=0;
+  function add(){ var s=document.getElementById('smph'); if(!s){ if(n++<40) setTimeout(add,150); return; }
+    if(!s.querySelector('.smph-bgm')){ var d=document.createElement('span'); d.className='smph-bgm'; s.insertBefore(d, s.firstChild); } }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', add); else add();
+})();
+</script>
+<!-- /SM луна в программе -->
+<!-- SM: параллакс фото «Подпишись на рассылку» -->
+<style>
+#rec5764368103 .t-cover{overflow:hidden!important;position:relative}
+#rec5764368103 .t-cover__carrier{position:absolute!important;left:0;right:0;width:100%!important;top:-50%!important;height:200%!important;background-attachment:scroll!important;will-change:transform}
+</style>
+<script>
+(function(){
+  function init(){
+    var rec=document.getElementById('rec5764368103'); if(!rec) return;
+    var car=rec.querySelector('.t-cover__carrier'), cov=rec.querySelector('.t-cover'); if(!car||!cov) return;
+    function up(){ var b=cov.getBoundingClientRect(); if(b.bottom<0||b.top>innerHeight) return;
+      var t=(b.top+b.height/2-innerHeight/2)*-0.25; t=Math.max(-190,Math.min(190,t));
+      car.style.transform='translate3d(0,'+t.toFixed(1)+'px,0)'; }
+    addEventListener('scroll',up,{passive:true}); addEventListener('resize',up); up();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+</script>
+<!-- /SM параллакс рассылка -->
 </body> </html>
