@@ -960,4 +960,45 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 })();
 </script>
 <!-- /SM способ оплаты + telegram -->
+<!-- SM: верхний экран «Женский круг в полнолуние» (вариант 1) -->
+<style>
+#rec5764366703.hr-on>*:not(.hr){display:none!important}
+.hr{font-family:'TildaSans',Arial,sans-serif;position:relative;overflow:hidden}
+.hr *{box-sizing:border-box}
+.hr1{min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 22px;background:linear-gradient(180deg,rgba(46,84,80,.55),rgba(60,46,86,.72)),url(https://static.tildacdn.net/tild6237-3235-4332-a139-376432303062/roses.jpg) center/cover}
+.hr-in{max-width:760px}
+.hr-eyebrow{font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#FBE7B0;margin:0 0 18px}
+.hr-moon{width:110px;height:110px;border-radius:50%;margin:0 auto 24px;animation:hrMoonGlow 6s ease-in-out infinite}
+.hr-moon img{width:100%;height:100%;display:block;border-radius:50%;filter:brightness(1.18) contrast(1.05);animation:hrSpin 120s linear infinite}
+.hr-title{font-size:58px;line-height:1.05;font-weight:600;margin:0;color:#fff}
+.hr-title em{font-style:italic;font-weight:400;color:#FBE7B0}
+.hr-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px 0 30px}
+.hr-chip{display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(251,231,176,.6);color:#fff;font-size:14.5px;font-weight:500;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.hr-btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;padding:16px 38px;border-radius:999px;background:linear-gradient(135deg,#FDF0CB 0%,#F0C869 55%,#D79F42 100%);color:#3D2F10;font-weight:700;font-size:16px;text-decoration:none;letter-spacing:.04em;animation:hrBreath 2.8s ease-in-out infinite}
+.hr-btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:hrShine 3.2s ease-in-out infinite}
+.hr-note{margin:16px 0 0;font-size:13.5px;color:rgba(255,255,255,.85)}
+@keyframes hrSpin{to{transform:rotate(360deg)}}
+@keyframes hrMoonGlow{0%,100%{box-shadow:0 0 46px 12px rgba(255,248,225,.5),0 0 100px 26px rgba(255,240,200,.25)}50%{box-shadow:0 0 60px 18px rgba(255,248,225,.65),0 0 130px 40px rgba(255,240,200,.32)}}
+@keyframes hrBreath{0%,100%{transform:scale(1);box-shadow:0 14px 30px -12px rgba(215,159,66,.8),0 0 0 0 rgba(240,200,105,0)}50%{transform:scale(1.045);box-shadow:0 18px 36px -12px rgba(215,159,66,.9),0 0 0 10px rgba(240,200,105,.22),0 0 34px 6px rgba(251,231,176,.55)}}
+@keyframes hrShine{0%,55%{left:-60%}85%,100%{left:130%}}
+@media(max-width:820px){.hr-title{font-size:38px}.hr-moon{width:86px;height:86px}.hr1{min-height:80vh;padding:60px 18px}}
+@media(prefers-reduced-motion:reduce){.hr-moon,.hr-moon img,.hr-btn,.hr-btn::after{animation:none}}
+</style>
+<script>
+(function(){
+function build(){
+var r=document.getElementById('rec5764366703'); if(!r || r.querySelector('.hr')) return;
+r.classList.add('hr-on');
+var d=document.createElement('div'); d.className='hr hr1';
+d.innerHTML='<div class="hr-in"><p class="hr-eyebrow">Serenity Moon · женский круг</p>'+
+'<div class="hr-moon"><img src="https://marathon.serenitymoonevents.com/events-img/fullmoon-moon.png" alt="Полная луна"></div>'+
+'<h1 class="hr-title">Женский круг<br><em>в полнолуние</em></h1>'+
+'<div class="hr-chips"><span class="hr-chip">24 ноября, вторник</span><span class="hr-chip">6:30 – 9:00 pm</span><span class="hr-chip">North Raleigh, NC</span></div>'+
+'<a class="hr-btn" href="#form">Хочу в круг</a><p class="hr-note">$35 · камерный круг, 11 мест</p></div>';
+r.appendChild(d);
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();
+</script>
+<!-- /SM верхний экран -->
 </body> </html>
