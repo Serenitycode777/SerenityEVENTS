@@ -802,4 +802,27 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 #rec5764367503 .t-section__bottomwrapper .t-btn *{color:#3D2F10!important}
 </style>
 <!-- /SM ведущая -->
+<!-- SM: кнопка «Закрыть» – когда страницу открыли с платформы -->
+<style>
+.sm-close{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;
+background:rgba(255,255,255,.95);color:#2E5450;border:1px solid rgba(226,196,110,.8);border-radius:999px;padding:9px 16px 9px 12px;
+font:600 14px 'TildaSans',Arial,sans-serif;cursor:pointer;box-shadow:0 10px 24px -12px rgba(0,0,0,.35)}
+.sm-close span{font-size:16px;line-height:1}
+</style>
+<script>
+(function(){
+var p; try{ p=new URLSearchParams(location.search).get('from'); }catch(e){}
+if(p!=='platform') return;
+function add(){
+var b=document.createElement('button'); b.type='button'; b.className='sm-close'; b.innerHTML='<span>✕</span> Закрыть';
+b.addEventListener('click', function(){
+try{ window.close(); }catch(e){}
+setTimeout(function(){ if(!window.closed) location.href='https://platform.serenitymoonevents.com/'; }, 300);
+});
+document.body.appendChild(b);
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', add); else add();
+})();
+</script>
+<!-- /SM закрыть -->
 </body> </html>
