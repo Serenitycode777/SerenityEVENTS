@@ -818,8 +818,8 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 <!-- SM: галерея – плавная бегущая лента фото -->
 <style>
 #rec5764368003.smgal-on{padding:40px 0 56px!important;background:linear-gradient(180deg,#fff,#F6F3F9)}
-.smgal{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.smgal-track{display:flex;gap:18px;width:max-content;animation:smgalMove 70s linear infinite;padding:14px 0}
+.smgal{overflow:hidden;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.smgal-track{will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden;display:flex;gap:18px;width:max-content;animation:smgalMove 70s linear infinite;padding:14px 0}
 .smgal:hover .smgal-track{animation-play-state:paused}
 .smgal-track img{height:300px;width:auto;border-radius:22px;object-fit:cover;box-shadow:0 18px 34px -22px rgba(46,84,80,.55);flex:none;transition:transform .5s ease}
 .smgal-track img:nth-child(odd){transform:translateY(10px)}
@@ -838,8 +838,8 @@ if(!urls.length) return;
 [].slice.call(r.children).forEach(function(c){ c.style.display='none'; });
 r.classList.add('smgal-on');
 var d=document.createElement('div'); d.id='smgal'; d.className='smgal';
-var one=urls.map(function(u){ return '<img src="'+u+'" alt="Женский круг Serenity Moon" loading="lazy">'; }).join('');
-var two=urls.map(function(u){ return '<img src="'+u+'" alt="" aria-hidden="true" loading="lazy">'; }).join('');
+var one=urls.map(function(u){ return '<img src="'+u+'" alt="Женский круг Serenity Moon" loading="eager" decoding="async">'; }).join('');
+var two=urls.map(function(u){ return '<img src="'+u+'" alt="" aria-hidden="true" loading="eager" decoding="async">'; }).join('');
 d.innerHTML='<div class="smgal-track">'+one+two+'</div>';
 r.appendChild(d);
 }
