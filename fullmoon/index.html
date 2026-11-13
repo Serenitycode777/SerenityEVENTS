@@ -892,4 +892,43 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 })();
 </script>
 <!-- /SM отзывы -->
+<!-- SM: блок ведущей – карточка с фото (вариант 1) -->
+<style>
+.hs{font-family:'TildaSans',Arial,sans-serif;max-width:1040px;margin:0 auto;padding:10px 22px 0}
+.hs a{color:#C5904A;text-decoration:none;border-bottom:1px solid rgba(197,144,74,.4)}
+.hs-eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#C59A3E;margin:0 0 8px}
+.hs .hs-ig{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:14px;font-weight:600;color:#2E5450;border:1px solid rgba(166,195,190,.8);border-radius:999px;padding:8px 16px}
+.hsA{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center;background:#fff;border-radius:30px;padding:40px 44px;border:1px solid rgba(226,196,110,.5);box-shadow:0 26px 52px -32px rgba(46,84,80,.5)}
+.hsA-ph{width:260px;height:260px;border-radius:50%;background:center/cover;margin:0 auto;box-shadow:0 0 0 8px #fff,0 0 0 10px #E2C46E,0 22px 40px -18px rgba(46,84,80,.6)}
+.hsA h3{font-size:34px;font-weight:600;color:#2E5450;margin:0 0 6px}
+.hsA .hs-found{font-size:15px;color:#7a7090;margin:0 0 14px}
+.hsA .hs-role{font-size:18px;font-weight:600;color:#2E5450;margin:0 0 14px;padding-left:14px;border-left:3px solid #E2C46E}
+.hsA ul{list-style:none!important;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.hsA li{list-style:none!important;position:relative;padding-left:22px;font-size:15.5px;line-height:1.55;color:#4a4a4a}
+.hsA li:before{content:"✦"!important;position:absolute;left:0;top:1px;color:#D79F42;font-size:12px}
+@media(max-width:820px){.hsA{grid-template-columns:1fr;gap:22px;padding:28px 22px;text-align:center}.hsA ul{text-align:left}.hsA .hs-role{border-left:0;padding:0}.hsA-ph{width:200px;height:200px}}
+</style>
+<script>
+(function(){
+function build(){
+var r=document.getElementById('rec5764367503'); if(!r || document.getElementById('hsA')) return;
+var cont=r.querySelector('.t524__container'); if(!cont) return;
+cont.style.display='none';
+var PH='https://static.tildacdn.net/tild6133-3966-4438-b131-383736346563/SERENITY_MOON-31.png';
+var pts=['Преподаватель кундалини-йоги, звукотерапевт, практик ведической астрологии (Джйотиш), аюрведический wellness-коуч',
+'Объединяет многолетний опыт в бизнесе с глубокими знаниями и практическим опытом в сфере холистического здоровья, осознанного образа жизни и личностного развития',
+'Организатор и ведущая оздоровительных ретритов и фестиваля, женских кругов, трансформационных программ и онлайн-проектов'];
+var d=document.createElement('div'); d.className='hs'; d.id='hsA';
+d.innerHTML='<div class="hsA"><div class="hsA-ph" style="background-image:url(\''+PH+'\')"></div><div>'+
+'<p class="hs-eyebrow">ведущая практик</p><h3>Мила Браун</h3>'+
+'<p class="hs-found">Основатель <a href="https://www.instagram.com/serenity_moon_circle/" target="_blank" rel="noopener">Serenity Moon</a> &amp; <a href="https://www.instagram.com/serenity_world_center" target="_blank" rel="noopener">Serenity World</a>, <a href="https://www.instagram.com/milabrown.pro" target="_blank" rel="noopener">milabrown.pro</a></p>'+
+'<p class="hs-role">Ментор в сфере здоровья, личностного развития и бизнеса</p>'+
+'<ul>'+pts.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul>'+
+'<a class="hs-ig" href="https://www.instagram.com/milabrown.pro" target="_blank" rel="noopener">◎ @milabrown.pro</a></div></div>';
+cont.parentNode.insertBefore(d, cont.nextSibling);
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();
+</script>
+<!-- /SM блок ведущей -->
 </body> </html>
