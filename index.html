@@ -127,6 +127,13 @@ section{padding:56px 0}
 .ev .note{font-size:12.5px;font-style:italic}
 .ev-actions{margin-top:auto;padding-top:12px;display:flex;gap:10px;flex-wrap:wrap}
 .ev-actions .btn{padding:11px 22px;font-size:13px}
+.ev-img.fm{position:relative}
+.ev-img.fm .date{position:absolute;top:18px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#8E82A3,#AA9DB8);color:#fff;border-radius:16px;padding:8px 22px;text-align:center;box-shadow:0 10px 24px -12px rgba(40,30,60,.6)}
+.ev-img.fm .date b{display:block;font-family:var(--serif);font-size:30px;line-height:1.05;white-space:nowrap}
+.ev-img.fm .date small{display:block;white-space:nowrap;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.ev-img.fm .date small i{font-style:normal;color:#F3D88C}
+.ev-img.fm .moon{position:absolute;right:16px;bottom:16px;width:64px;height:64px;border-radius:50%;box-shadow:0 0 28px 6px rgba(255,244,214,.55)}
+@media (max-width:860px){ .ev-img.fm .date{top:12px;padding:6px 16px} .ev-img.fm .date b{font-size:24px} .ev-img.fm .moon{width:52px;height:52px} }
 .tg-row{text-align:center;margin-top:30px}
 @media (max-width:860px){ .events{grid-template-columns:1fr} .meta li span{min-width:98px} .ev-img.marathon .date{top:12px;padding:6px 16px} .ev-img.marathon .date b{font-size:24px} .ev-img.marathon img{width:74%;margin-bottom:3%} }
 
@@ -259,6 +266,29 @@ footer a{color:var(--sage-deep);text-decoration:none;font-weight:600}
             <p>Трекер привычек, практики от экспертов и живое женское сообщество — внедряем полезные привычки для тела и души, в своём темпе.</p>
             <div class="ev-actions">
               <a class="btn btn-primary" href="https://marathon.serenitymoonevents.com">Подробнее и участие</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ev">
+          <div class="ev-img fm">
+            <div class="date"><b>24 ноября</b><small>вторник · <i>полнолуние</i></small></div>
+            <img src="fullmoon/img/circle-hands.jpeg" alt="Женский круг в полнолуние">
+            <img class="moon" src="https://marathon.serenitymoonevents.com/events-img/fullmoon-moon.png" alt="">
+          </div>
+          <div class="ev-body">
+            <span class="ev-badge lav">Женский круг</span>
+            <h3>Женский круг в полнолуние</h3>
+            <ul class="meta">
+              <li><span>дата:</span><b>вторник, 24 ноября 2026</b></li>
+              <li><span>время:</span><b>6:30 – 9:00 pm</b></li>
+              <li><span>место:</span><b>North Raleigh, NC</b></li>
+              <li><span>энергообмен:</span><b>$35</b></li>
+            </ul>
+            <p>Вечер внутреннего баланса и гармонии: свободное движение и танец, Кундалини медитация на баланс и практика рисования Меркабы.</p>
+            <p class="note">Камерный круг – 11 мест.</p>
+            <div class="ev-actions">
+              <a class="btn btn-primary" href="/fullmoon/">Подробнее и регистрация</a>
             </div>
           </div>
         </article>
