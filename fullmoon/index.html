@@ -725,4 +725,44 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 })();
 </script>
 <!-- /SM программа -->
+<!-- SM: вводный блок о круге (вариант 1) -->
+<style>
+.ab{font-family:'TildaSans',Arial,sans-serif;color:#3a3a3a}
+.ab1{max-width:1120px;margin:0 auto;padding:70px 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
+.ab-eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C59A3E;margin:0 0 12px}
+.ab-title{font-size:46px;line-height:1.1;font-weight:600;color:#2E5450;margin:0}
+.ab-line{width:70px;height:2px;background:linear-gradient(90deg,#D79F42,#F0C869);margin:22px 0}
+.ab-sub{font-size:20px;line-height:1.5;color:#8a7fa0;font-style:italic;margin:0 0 22px}
+.ab-lead{font-size:18px;line-height:1.65;color:#2E5450;font-weight:500;margin:0 0 18px;padding-left:16px;border-left:3px solid #A6C3BE}
+.ab-body p{font-size:16px;line-height:1.75;margin:0 0 12px;color:#4a4a4a}
+.ab-card{background:linear-gradient(160deg,#F4F0F8,#EAE3F1);border:1px solid #E2DAEA;border-radius:26px;padding:34px 30px;box-shadow:0 22px 44px -28px rgba(80,60,110,.45)}
+.ab-card h4{font-size:20px;color:#2E5450;margin:0 0 18px;font-weight:600}
+.ab-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.ab-card li{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45;color:#3a3a3a}
+.ab-card li::before{content:"✦";color:#D79F42;font-size:14px;line-height:1.5;flex:none}
+.ab-quote{margin:24px 0 0;padding-top:20px;border-top:1px solid rgba(166,140,190,.35);font-size:16px;line-height:1.6;font-style:italic;color:#6a5a86}
+@media(max-width:820px){.ab1{grid-template-columns:1fr;gap:30px;padding:44px 18px}.ab-title{font-size:32px}.ab-sub{font-size:18px}.ab-lead{font-size:17px}.ab-body p{font-size:15.5px}.ab-card{padding:26px 22px}}
+</style>
+<script>
+(function(){
+function build(){
+var rec=document.getElementById('rec5764366803'); if(!rec || document.getElementById('smAbout')) return;
+var list=['Отключись от повседневной рутины','Почувствуй контакт со своим телом','Освободись от напряжения и ложных установок','Трансформируй внутренние ограничения','Открой пространство для новых возможностей'];
+var s=document.createElement('section'); s.id='smAbout'; s.className='ab ab1';
+s.innerHTML='<div><p class="ab-eyebrow">24 ноября · полнолуние</p>'+
+'<h2 class="ab-title">Женский круг в полнолуние 24.11</h2><div class="ab-line"></div>'+
+'<p class="ab-sub">Приглашаем тебя в увлекательное путешествие внутрь себя, в своё женское начало — познание своей сути.</p>'+
+'<p class="ab-lead">Женский круг — это источник силы и ресурса, который помогает трансформировать внутренние ограничения, раскрыть свой потенциал и обрести больше ясности, опоры и свободы.</p>'+
+'<div class="ab-body"><p>В этот раз нас ждут Кундалини-йога и медитация на баланс, которые помогут замедлиться, настроиться на себя и почувствовать своё внутреннее пространство.</p>'+
+'<p>Мы подготовим тело, сознание и энергию к практике рисования Меркабы — сакральной геометрии, через которую можно соединиться со своим внутренним центром, гармонизировать мужскую и женскую энергии, почувствовать баланс между земным и духовным и направить внимание на свой внутренний запрос.</p>'+
+'<p>Через линии, форму и намерение мы создадим пространство для ясности.</p></div></div>'+
+'<aside class="ab-card"><h4>Что подарит тебе круг</h4><ul>'+list.map(function(l){return '<li>'+l+'</li>';}).join('')+'</ul>'+
+'<p class="ab-quote">Практики в женском круге позволяют усилить общее энергетическое поле и глубину процессов.</p></aside>';
+[].slice.call(rec.children).forEach(function(c){ c.style.display='none'; });
+rec.appendChild(s);
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();
+</script>
+<!-- /SM вводный блок -->
 </body> </html>
